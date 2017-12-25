@@ -1,0 +1,94 @@
+/*rating star style*/
+.rating {
+  display: inline-block;
+  position: relative;
+  height: 25px;
+  line-height: 25px;
+  font-size: 20px;
+}
+
+.rating label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  cursor: pointer;
+}
+
+.rating label:last-child {
+  position: static;
+}
+
+.rating label:nth-child(1) {
+  z-index: 5;
+}
+
+.rating label:nth-child(2) {
+  z-index: 4;
+}
+
+.rating label:nth-child(3) {
+  z-index: 3;
+}
+
+.rating label:nth-child(4) {
+  z-index: 2;
+}
+
+.rating label:nth-child(5) {
+  z-index: 1;
+}
+
+.rating label input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+}
+
+.rating label .icon {
+  float: left;
+  color: transparent;
+}
+
+.rating label:last-child .icon {
+  color: #000;
+}
+
+.rating:not(:hover) label input:checked ~ .icon,
+.rating:hover label:hover input ~ .icon {
+  color: #f4e542;
+}
+
+.rating label input:focus:not(:checked) ~ .icon:last-child {
+  color: #000;
+  text-shadow: 0 0 5px #09f;
+} 
+
+.checked {
+    color: orange;
+}
+.dot{
+  padding:0 6px;
+  padding-bottom: 2px;
+  border: 1px solid;
+  border-radius: 2px;
+  line-height: 18px;
+  font-size: 19px;
+  margin-right: 5px;
+}
+.non_veg{
+  color: red;
+}
+.veg{
+  color: green;
+}
+.red{
+  border-color: red;
+}
+.green{
+  border-color: green;
+}
+.ui.items > .item > .content.pro{
+  margin:auto 1%;
+}

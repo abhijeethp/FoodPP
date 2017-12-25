@@ -1,0 +1,123 @@
+<% include ./partials/header %>
+<div class="container">
+
+  <p class="script"><span>Welcome to</span></p>
+  <p class="shadow text2">FOOD++</p>
+  <p class="script"><span>Abhijeeth Padarthi - Abhishek Konkal</span></p>
+  
+  <!-- LOCATION FORM -->
+  <div id="location_form">
+    <form class="ui form" method="POST" action="/">
+      <div class="two fields">
+        <div class="field">
+          <select name="city" class="ui dropdown">
+            <option value="">City</option>
+            
+            <% cities.forEach( function(city, index) { %>
+                <option value="<%= city %>"><%= city %></option>
+            <% }); %>
+
+          </select>
+        </div>
+        <div class="field">
+          <select name="area" class="ui fluid dropdown">
+            <option value="">Area</option>
+            
+            <% locations.forEach( function(location, index) { %>
+              <option value="<%= location.Area %>"><%= location.Area %></option>
+            <% }); %>
+            
+          </select>
+        </div>
+      </div>
+      <button class="positive ui button btn-block">Go!</button>
+    </form>
+  </div>
+ </div>
+
+
+
+<style type="text/css">
+
+  @import url(https://fonts.googleapis.com/css?family=Arvo:700);
+  @import url(https://fonts.googleapis.com/css?family=Seaweed+Script);
+  
+  body {  
+    background: url('https://media.discordapp.net/attachments/349606749038313472/379302081309179905/1920x1080-data_out_143_4080040-restaurant-wallpapers.jpg') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+    font-family: Arial;
+    font-weight: 800;
+  }
+
+  #location_form{ 
+    margin :1% 20%;
+    padding:1em;
+    background-color:rgba(0,0,0,.5);
+    border-radius: 5px;
+  }
+
+  .shadow {
+    color: #fff;
+    font-family: Arvo;
+    font-weight: bold;
+    text-shadow:
+      -3px -3px 0 #fff,
+      3px -3px 0 #fff,
+      -3px 3px 0 #fff,
+      3px 3px 0 #fff,
+      4px 4px 0 #000,
+      5px 5px 0 #000,
+      6px 6px 0 #000,
+      7px 7px 0 #000;
+    line-height: 0.8em;
+    letter-spacing: 0.1em;
+    transform: scaleY(0.7);
+    -webkit-transform: scaleY(0.7);
+    -moz-transform: scaleY(0.7);
+    margin:0;
+    text-align: center;
+  } 
+
+  .script {
+    font-family: "Seaweed Script";
+    color: #000;
+    text-align: center;
+    font-size: 40px;
+    position: relative;
+    margin:0;
+  }
+
+  .script span {
+    background-color: rgba(0,0,0,0);
+    padding: 0 0.3em;
+  }
+
+  .script:before {
+    content:"";
+    display: block;
+    position: absolute;
+    z-index:-1;
+    top: 50%;
+    width: 100%;
+    margin:auto;
+    border-bottom: 3px solid rgba(255,255,255,1);
+  }
+
+  .text1 {
+    font-size: 60px;
+  }
+
+  .text2 {
+    font-size: 150px;
+    color:#000;
+  }
+
+  .text3 {
+    font-size: 100px;
+  }
+</style>
+
+<% include ./partials/footer %>

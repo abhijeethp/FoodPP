@@ -1,0 +1,152 @@
+<% include ../partials/header %>
+
+
+	<div class="bigger ui segment grid">
+
+		<div class="rlogo ui centered row"><img class="ui medium rounded image" src="<%=restaurant.Logo%>"></div>
+		<div class="ui centered row">
+			<div class="ui centered segment vertically divided grid">
+				<div class="ui centered row"><h1><%=restaurant.Name%></h1></div>
+				<div class="ui centered row"><p><%=restaurant.Description%></p></div>
+				<div class="ui centered row">
+					<% for(var i=0; i<restaurant.Rating; i++) {%>
+						<span class="fa fa-star checked"></span>
+					<% } %>
+					<% for(var i=0; i<(5-restaurant.Rating); i++) { %>
+						<span class="fa fa-star"></span>
+					<% } %>
+				</div>
+			</div>
+				
+		</div>
+		
+		
+
+	</div>
+
+
+<div class="ui main text segment container">
+	
+	<% restaurant.menus.forEach( function(menu, index1) { %>
+		<h3 class="ui dividing header">
+	 		<%=menu.Menu_name%>
+			
+			<% if(currentUser) { %>
+				
+				<form action="/restaurants/<%=restaurant.Restaurant_id%>/menus/<%=menu.Menu_id%>/menu_items/new" method="GET" style="display:inline">
+	 				<button class="ui green button">ADD NEW ITEM</button>
+	 			</form>
+
+	 			<form action="/restaurants/<%=restaurant.Restaurant_id%>/menus/<%=menu.Menu_id%>?_method=DELETE" method="POST" style="display:inline">
+	 				<button class="ui red button">DELETE MENU</button>
+	 			</form>
+	 		<% } %>
+
+		</h3>
+
+		<div class="ui top attached segment">
+			<div class="ui divided items">
+
+				<% menu.menuItems.forEach( function(menuItem, index2) { %>
+					<div class="item">
+						
+						<div class="ui small image">
+							<img src="<%=menuItem.Image%>">
+						</div>
+						
+						<div class="content pro">
+							<p class="header">
+								<%=menuItem.Name%>
+								<% if(currentUser) { %>
+								<form action="/restaurants/<%=restaurant.Restaurant_id%>/menus/<%=menu.Menu_id%>/menu_items/<%=menuItem.Menu_item_id%>?_method=DELETE" method="POST" style="display:inline">
+	 								<button class="ui red button">DELETE ITEM</button>
+	 							</form>	
+	 							<% }%>
+
+							</p>
+							<div class="description">
+								<p>Price:&nbsp;&nbsp;&nbsp;<span><i class="fa fa-inr" aria-hidden="true"></i></span><%=menuItem.Price%></p>
+								<p><i class="fa fa-users" aria-hidden="true"></i>&nbsp;&nbsp;Serves:&nbsp;&nbsp;<%=menuItem.Serves%> people</p>
+							</div>
+							<div class="extra">
+							<% if(menuItem.Veg == 0){ %>
+								<div class="non_veg">
+									<span class="red dot">●</span>Non Veg
+								</div>
+							<% } else { %>
+								<p class="veg">
+									<span class="green dot">●</span>Veg
+								</p>
+							<% } %>
+							</div>
+						</div>
+
+					</div>
+				<% }); %>
+
+			</div>
+
+		</div>
+	<% });%>
+	<% if(currentUser) { %>
+		<a id="new_menu" href="/restaurants/<%=restaurant.Restaurant_id%>/menus/new" class="ui green button"> Add a new menu! </a>
+	<% } %>
+</div>
+
+
+
+<div class="ui main text segment container">
+		
+
+	<div class="ui divided items">
+	<% restaurant.reviews.forEach(function (review, index2) { %>
+		<div class="item">
+			<div class="content">
+				<div class="header"><%=review.Fname%></div>
+				<div class="extra">
+    				<div class="cinema"><%=review.niceDate%></div>
+    			</div>
+				<div class="meta">
+        			<% for(var i=0; i<review.Rating; i++) {%>
+						<span class="fa fa-star checked"></span>
+					<% } %>
+					<% for(var i=0; i<(5-review.Rating); i++) { %>
+						<span class="fa fa-star"></span>
+					<% } %>
+     			</div>
+     			<div class="description">
+       				<p><%=review.Review%></p>
+    			</div>
+			</div>
+		</div>
+		<% }); %>
+	</div>
+
+	<a href="/restaurants/<%=restaurant.Restaurant_id%>/reviews/new" class="ui green button">
+		Leave a review!
+	</a>
+</div>
+
+
+<style>
+	.ui.segment.grid{
+		margin-right: 5px;
+		margin-left: 5px;
+	}
+.ui .medium.rounded.image{
+		width: 15em;
+		height: 15em;
+		border:2px solid rgba(255, 255, 255,0.5);
+	}
+	.rlogo.ui.centered.row{
+		padding-bottom: 0;
+	}
+	#new_menu{
+		margin-top: .8%;
+	}
+	.bigger.ui.segment.grid{
+		background-image: url("https://ae01.alicdn.com/kf/HTB1tyOQSXXXXXaXXXXXq6xXFXXXg/Custom-retro-wallpaper-Pizza-Coffee-Cake-3D-cartoon-murals-for-the-cafe-restaurant-hotel-background-wall.jpg");
+	}
+</style>
+
+<% include ../partials/footer %>

@@ -1,0 +1,17 @@
+<% include ../partials/header %>
+<div class="container">
+	<div class="row">
+		<h1 style="text-align: center">Add a new menu to <%=restaurant.Name%></h1>
+		<div style="width:30%; margin:25px auto">
+			<form action="/restaurants/<%=restaurant.Restaurant_id%>/menus" method="POST" accept-charset="utf-8">
+				<div class="form-group">
+					<input class="form-control" type="text" name="menu[Name]" placeholder="Menu name">
+				</div>
+				<div class="form-group">
+					<button class="btn btn-lg btn-primary btn-block">Submit</button>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+<% include ../partials/footer %>

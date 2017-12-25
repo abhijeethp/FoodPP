@@ -1,0 +1,57 @@
+<% include ../partials/header %>
+
+<div class="container my_container">
+  
+  <div class="jumbotron jumbotron-fluid">
+    <div class="container">
+      <h1><i class="marker icon"></i><%=location.city +" : "+ location.area %></h1>
+      <p>We have located <%=restaurants.length%> restaurants near you! :D</p>
+      <% if(currentUser) { %>
+        <p>
+          <a href="/restaurants/new" class="large ui teal button">Add new restaurant</a>
+        </p>
+      <% } %>
+    </div>
+  </div>
+    
+ 
+  <div class="ui row link red divided cards" >
+    <% restaurants.forEach( function(element, index) { %>
+      <a class="card" href="/restaurants/<%=element.Restaurant_id%>">
+      <div class="image">
+       <img src="<%=element.Logo%>">
+      </div>
+      <div class="content">
+        <div class="header"><%=element.Name%></div>
+          <div class="meta">
+            <p>
+              <% element.menuNames.forEach( function(menuName, index) { %>
+                <%=menuName.Menu_name%>,
+              <% }); %>
+            </p>
+          </div>
+        <div class="description">
+          <%=element.Description%>
+        </div>
+      </div>
+      <div class="extra content">
+        <span class="right floated">
+          Rating: <%=element.Rating%>
+        </span>
+        <span>
+          <i class="comment icon"></i>
+          <%=element.noOfReviews%>
+        </span>
+      </div>
+      </a>
+    <% }); %>
+  </div>
+</div>
+
+<style>
+  .my_container{
+    width:82%;
+  }
+</style>
+
+<% include ../partials/footer %>
