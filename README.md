@@ -5,13 +5,13 @@ FoodPP is a full stack web application that helps users locate all the available
 ## Database Architecture
 
 <p align="center">
-  <img src="https://github.com/rkinabhi/FoodPP/tree/master/report/images/schema.jpg">
+  <img src="https://github.com/rkinabhi/FoodPP/blob/master/report/images/schema.jpg">
 </p>
 
 ## Application Architecture
 
 <p align="center">
-  <img src="https://github.com/rkinabhi/FoodPP/tree/master/report/images/app.jpg">
+  <img src="https://github.com/rkinabhi/FoodPP/blob/master/report/images/appArchitecture.jpg">
 </p>
 
 ## Web pages
@@ -23,16 +23,16 @@ FoodPP is a full stack web application that helps users locate all the available
 
 ### Located restaurants page
 <p align="center">
-  <img src="https://github.com/rkinabhi/FoodPP/tree/master/report/images/locatedRestaurants.jpg">
+  <img src="https://github.com/rkinabhi/FoodPP/blob/master/report/images/locatedRestaurants.jpg">
 </p>
 
 ### Specific restaurant page
 <p align="center">
-  <img src="//RestaurantPage1.jpg">
+  <img src="https://github.com/rkinabhi/FoodPP/blob/master/report/images/RestaurantPage1.jpg">
 </p>
 
 <p align="center">
-  <img src="https://github.com/rkinabhi/FoodPP/tree/master/report/images/RestaurantPage2.jpg">
+  <img src="https://github.com/rkinabhi/FoodPP/blob/master/report/images/RestaurantPage2.jpg">
 </p>
 
 ### Form to create a new restaurant
