@@ -37,7 +37,7 @@ FoodPP is a full stack web application that helps users locate all the available
 
 ### Form to create a new restaurant
 <p align="center">
-  <img src="https://github.com/rkinabhi/FoodPP/tree/master/report/images/RestaurantCreate.jpg">
+  <img src="https://github.com/rkinabhi/FoodPP/blob/master/report/images/RestaurantCreate.jpg">
 </p>
 
 ## Built With
