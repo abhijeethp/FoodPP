@@ -18,7 +18,7 @@ FoodPP is a full stack web application that helps users locate all the available
 
 ### Landing Page
 <p align="center">
-  <img src="https://github.com/rkinabhi/FoodPP/tree/master/report/images/landingPage.jpg">
+  <img src="https://github.com/rkinabhi/FoodPP/blob/master/report/images/landingPage.jpg">
 </p>
 
 ### Located restaurants page
